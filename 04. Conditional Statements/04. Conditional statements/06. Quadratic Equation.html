@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>06. Quadratic equation.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-a">Input a: </label>
+	    <input type="text" id="tb-a"/>
+	    <br />
+        <label for="tb-b">Input b: </label>
+	    <input type="text" id="tb-b"/>
+	    <br />
+        <label for="tb-c">Input c: </label>
+	    <input type="text" id="tb-c"/>
+	    <br />
+        <a href="#" onclick="solveQuad()">Solve equation!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>
+            function solveQuad() {
+                var a = jsConsole.readInteger("#tb-a");
+                var b = jsConsole.readInteger("#tb-b");
+                var c = jsConsole.readInteger("#tb-c");
+                var discreminant = (b*b) - (4 * a * c);
+                if (discreminant == 0)
+                {
+                    var x = -b / (2 * a);
+                    jsConsole.writeLine("Equation has one solution: " + x);
+                }
+                else
+                {
+                    if (discreminant > 0)
+                    {
+                        var x1 = (-b + Math.sqrt(discreminant)) / (2 * a);
+                        var x2 = (-b - Math.sqrt(discreminant)) / (2 * a);
+                        jsConsole.writeLine("Solutions to the equation are: " + x1 + " " + x2);
+                    }
+                    else
+                    {
+                        jsConsole.writeLine("Equation has no real solutions.");
+                    }
+                }
+            }
+        </script>			  
+    </body>
+</html>

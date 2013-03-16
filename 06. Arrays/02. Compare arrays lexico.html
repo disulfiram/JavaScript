@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+        <meta charset="UTF-8">
+        <title>02. Compare arrays lexico</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+
+            var firstArr = new Array('a', 'b', 'c', 'd');
+            var secondArr = new Array('a','c','b')
+            for (index = 0; index < 20 ; index++)
+            {
+                if (firstArr[index] === secondArr[index])
+                {
+                    jsConsole.writeLine("{} is the same as {}")
+                }
+            }
+            jsConsole.writeLine(arr.join(", "));
+        </script>
+    </body>
+</html>

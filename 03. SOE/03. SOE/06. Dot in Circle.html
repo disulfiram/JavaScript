@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>06. Is the point in circle K(0,5).</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-xCoord">Input X coordinate of the point: </label>
+	    <input type="text" id="tb-xCoord"/>
+	    <br />		
+        <label for="tb-yCoord">Input Y coordinate of the point: </label>
+	    <input type="text" id="tb-yCoord"/>
+	    <br />		
+        <a href="#" onclick="check()">Check if point is in circle K(0,5)!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>
+            function check() {
+                var inputX = jsConsole.readFloat("#tb-xCoord");
+                var inputY = jsConsole.readFloat("#tb-yCoord");
+                var dist = Math.sqrt((inputX*inputX) + (inputY*inputY));
+                if (dist < 5)
+                {
+                    jsConsole.writeLine("The dot is in the circle");
+                }
+                else
+                {
+                    if (dist == 5)
+                    {
+                        jsConsole.writeLine("The dot is on the circle");
+                    }
+                    else
+                    {
+                        jsConsole.writeLine("The dot is outside the circle");
+                    }
+                }
+            }
+        </script>			  
+    </body>
+</html>

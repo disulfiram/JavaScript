@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>02. Divisable by 5 and 7.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-number">Input number: </label>
+	    <input type="text" id="tb-number"/>
+	    <br />		
+        <a href="#" onclick="checkDivisable()">Divisable by 5 and 7?</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>
+            function checkDivisable() {
+                var number = jsConsole.readInteger("#tb-number");
+                var check = false;
+                if (number % 5 == 0 && number % 7 == 0) {
+                    check = true;
+                }
+                jsConsole.writeLine(number + " is divisable by 5 and 7 at the same time? " + check)
+            }
+        </script>			  
+    </body>
+</html>

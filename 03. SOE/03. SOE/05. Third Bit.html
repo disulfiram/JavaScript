@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>05. Third bit.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-number">Input number: </label>
+	    <input type="text" id="tb-number"/>
+	    <br />
+        <a href="#" onclick="checkIfOneOrZero()">Check third bit!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>
+            function checkIfOneOrZero() {
+                var number = jsConsole.readInteger("#tb-number");
+                var bitPosition = 3;      
+                var mask = 1 << bitPosition;        
+                var numberAndMask = number & mask;  
+                var bit = numberAndMask >> bitPosition;  
+                if (bit == 0)
+                {
+                    jsConsole.writeLine("3rd bit is 0");
+                }
+                else
+                {
+                    jsConsole.writeLine("3rd bit is 1");
+                }
+            }
+        </script>			  
+    </body>
+</html>

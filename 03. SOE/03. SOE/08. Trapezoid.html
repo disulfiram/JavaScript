@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>08. Trapezoid area.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-firstSide">Input side: </label>
+	    <input type="text" id="tb-firstSide"/>
+	    <br />		
+        <label for="tb-secondSide">Input side: </label>
+	    <input type="text" id="tb-secondSide"/>
+	    <br />		
+        <label for="tb-height">Input height: </label>
+	    <input type="text" id="tb-height"/>
+	    <br />	
+        <a href="#" onclick="calcArea()">Calculate area!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>
+            function calcArea() {
+                var firstSide = jsConsole.readFloat("#tb-firstSide");
+                var secondSide = jsConsole.readFloat("#tb-secondSide");
+                var height = jsConsole.readFloat("#tb-height");
+                jsConsole.writeLine("Area = " + ((firstSide + secondSide) / 2) * height);
+            }
+        </script>			  
+    </body>
+</html>

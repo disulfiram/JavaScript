@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>07. Greatest of five.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-first">Input first number: </label>
+	    <input type="text" id="tb-first"/>
+	    <br />
+        <label for="tb-second">Input second number: </label>
+	    <input type="text" id="tb-second"/>
+	    <br />
+        <label for="tb-third">Input third number: </label>
+	    <input type="text" id="tb-third"/>
+	    <br />
+        <label for="tb-forth">Input forth number: </label>
+	    <input type="text" id="tb-forth"/>
+	    <br />
+        <label for="tb-fifth">Input fifth number: </label>
+	    <input type="text" id="tb-fifth"/>
+	    <br />
+        <a href="#" onclick="findGreatest()">Find greatest number!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>
+            function findGreatest() {
+                var first = jsConsole.readInteger("#tb-first");
+                var second = jsConsole.readInteger("#tb-second");
+                var third = jsConsole.readInteger("#tb-third");
+                var forth = jsConsole.readInteger("#tb-forth");
+                var fifth = jsConsole.readInteger("#tb-fifth");
+                for (var i = 0; i < 5; i++)
+                {
+                    if (fifth > forth)
+                    {
+                        var temp = forth;
+                        forth = fifth;
+                        fifth = temp;
+                    }
+                    if (forth > third)
+                    {
+                        var temp = third;
+                        third = forth;
+                        forth = temp;
+                    }
+                    if (third > second)
+                    {
+                        var temp = second;
+                        second = third;
+                        third = temp;
+                    }
+                    if (second > first)
+                    {
+                        var temp = first;
+                        first = second;
+                        second = temp;
+                    }
+                }
+                jsConsole.writeLine("Greatest number is: " + first);
+            }
+        </script>			  
+    </body>
+</html>

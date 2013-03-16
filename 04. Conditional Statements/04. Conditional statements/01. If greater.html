@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>01. If second is greater, switch places.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>														 
+            var first = 1;
+            var second = 20;
+            var bigger = first;
+            
+            if (bigger < second)
+            {
+                bigger = second;
+                second = first;
+                first = bigger;
+            }
+            jsConsole.writeLine(first);
+            jsConsole.writeLine(second);
+        </script>			  
+    </body>
+</html>

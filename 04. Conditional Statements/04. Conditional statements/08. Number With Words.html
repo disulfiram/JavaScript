@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>08. A number in words.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-number">Input number: </label>
+	    <input type="text" id="tb-number"/>
+	    <br />
+        <a href="#" onclick="writeNumber()">Write digit!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>
+            function writeNumber() {
+                var number = jsConsole.readInteger("#tb-number");
+                if (number == 0) {
+                    jsConsole.write("Zero");
+                }
+                if (number >= 100 && number <= 999) {
+                    switch (Math.ceil(number / 100) - 1) {
+                        case 1:
+                            jsConsole.write(" One Hundred");
+                            break;
+                        case 2:
+                            jsConsole.write(" Two Hundred");
+                            break;
+                        case 3:
+                            jsConsole.write(" Three Hundred");
+                            break;
+                        case 4:
+                            jsConsole.write(" Four Hundred");
+                            break;
+                        case 5:
+                            jsConsole.write(" Five Hundred");
+                            break;
+                        case 6:
+                            jsConsole.write(" Six Hundred");
+                            break;
+                        case 7:
+                            jsConsole.write(" Seven Hundred");
+                            break;
+                        case 8:
+                            jsConsole.write(" Eight Hundred");
+                            break;
+                        case 9:
+                            jsConsole.write(" Nine Hundred");
+                            break;
+                        default:
+                            break;
+                    }
+                    if (number % 100 != 0) {
+                        jsConsole.write(" and");
+                        Remainder = number % 100;
+                        number = Remainder;
+                    }
+                }
+                switch (number) {
+                    case 10:
+                        jsConsole.write(" Ten");
+                        break;
+                    case 11:
+                        jsConsole.write(" Eleven");
+                        break;
+                    case 12:
+                        jsConsole.write(" Twelve");
+                        break;
+                    case 13:
+                        jsConsole.write(" Thirteen");
+                        break;
+                    case 14:
+                        jsConsole.write(" Fourteen");
+                        break;
+                    case 15:
+                        jsConsole.write(" Fifteen");
+                        break;
+                    default:
+                        break;
+                }
+                switch (Math.ceil(number / 10) - 1) {
+                    case 2:
+                        jsConsole.write(" Twenty");
+                        break;
+                    case 3:
+                        jsConsole.write(" Thirty");
+                        break;
+                    case 4:
+                        jsConsole.write(" Forty");
+                        break;
+                    case 5:
+                        jsConsole.write(" Fifty");
+                        break;
+                    case 6:
+                        jsConsole.write(" Sixty");
+                        break;
+                    case 7:
+                        jsConsole.write(" Seventy");
+                        break;
+                    case 8:
+                        jsConsole.write(" Eighty");
+                        break;
+                    case 9:
+                        jsConsole.write(" Ninety");
+                        break;
+                }
+                if ((number >= 0 && number <= 9) || ((number >= 16 && number <= 99))) {
+                    switch ((number % 10)) {
+                        case 1:
+                            jsConsole.write(" One");
+                            break;
+                        case 2:
+                            jsConsole.write(" Two");
+                            break;
+                        case 3:
+                            jsConsole.write(" Three");
+                            break;
+                        case 4:
+                            jsConsole.write(" Four");
+                            break;
+                        case 5:
+                            jsConsole.write(" Five");
+                            break;
+                        case 6:
+                            jsConsole.write(" Six");
+                            if (number == 16) {
+                                jsConsole.write("teen   ");
+                            }
+                            break;
+                        case 7:
+                            jsConsole.write(" Seven");
+                            if (number == 17) {
+                                jsConsole.write("teen   ");
+                            }
+                            break;
+                        case 8:
+                            jsConsole.write(" Eight");
+                            if (number == 18) {
+                                jsConsole.write("teen   ");
+                            }
+                            break;
+                        case 9:
+                            jsConsole.write(" Nine");
+                            if (number == 19) {
+                                jsConsole.write("teen   ");
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+
+                }
+                jsConsole.writeLine();;
+            }
+        </script>			  
+    </body>
+</html>

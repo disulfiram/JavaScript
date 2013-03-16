@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>07. Prime or not.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-number">Input number: </label>
+	    <input type="text" id="tb-number"/>
+	    <br />
+        <a href="#" onclick="checkPrimeOrNot()">Check if prime or not!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>		  
+        <script>
+            function checkPrimeOrNot() {
+                var number = jsConsole.readInteger("#tb-number");
+                var isPrime = true;
+                for (var divisor = 2; divisor < number; divisor++)
+                {
+                    if (number != divisor && number % divisor == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime)
+                {
+                    jsConsole.writeLine(number + " is prime");
+                }
+                else
+                {
+                    jsConsole.writeLine(number + " is not prime");
+                }
+            }
+        </script>			  
+    </body>
+</html>

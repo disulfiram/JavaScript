@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0DAC0767-5251-469C-8899-E63D8F46D412}"
+	ProjectSection(SolutionItems) = preProject
+		01. Array x 5.html = 01. Array x 5.html
+		02. Compare arrays lexico.html = 02. Compare arrays lexico.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{4F5AA21E-1890-4924-AE96-F317D9A1E73A}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\index-of.js = scripts\index-of.js
+		scripts\js-console.js = scripts\js-console.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "styles", "styles", "{F76281D6-7637-460D-97E4-84376DFE19CA}"
+	ProjectSection(SolutionItems) = preProject
+		styles\js-console.css = styles\js-console.css
+		styles\js-console.less = styles\js-console.less
+		styles\js-console.min.css = styles\js-console.min.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4F5AA21E-1890-4924-AE96-F317D9A1E73A} = {0DAC0767-5251-469C-8899-E63D8F46D412}
+		{F76281D6-7637-460D-97E4-84376DFE19CA} = {0DAC0767-5251-469C-8899-E63D8F46D412}
+	EndGlobalSection
+EndGlobal
