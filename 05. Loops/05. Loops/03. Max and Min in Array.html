@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>03. Find max and min in the array.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-numbers">Input array separated by ',': </label>
+        <input id="tb-numbers" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readArray()">Find min and max in array!</a>
+        <!--<a href="#" class="js-console-btn" onclick="findMax()">Find max!</a>-->
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readArray() {
+                var numbers = jsConsole.readNumbersArray("#tb-numbers", ",");
+                jsConsole.writeLine(findMin(numbers));
+                jsConsole.writeLine(findMax(numbers));				
+            }
+
+            function findMin(numbers) {
+                var min = Number.MAX_VALUE;
+                for (var i = 0; i < numbers.length; i++)
+                {
+                    if (min > numbers[i])
+                    {
+                        min = numbers[i];
+                    }
+                }
+                
+                return ("Min value in array is: " + min);
+            }
+            function findMax(numbers) {
+                var max = Number.MIN_VALUE;
+                for (var i = 0; i < numbers.length; i++)
+                {
+                    if (numbers[i] > max)
+                    {
+                        max = numbers[i];
+                    }
+                }
+                return ("Max value in array is: " + max);
+            }
+        </script>
+    </body>
+</html>

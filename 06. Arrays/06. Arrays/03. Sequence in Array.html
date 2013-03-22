@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>03. Find max sequence in array.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-numbers">Input array separated by ', ': </label>
+        <input id="tb-numbers" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readArray()">Find max sequence!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readArray() {
+                var numbers = jsConsole.readNumbersArray("#tb-numbers", ", ");
+                findMaxSeq(numbers);
+            }
+            
+            function findMaxSeq(numbers) {
+                var tempcounter = 1;
+                var counter = 1;
+                var indexOfSequence
+                for (var index = 0; index < numbers.length; index++) {
+                    if (numbers[index] == numbers[index - 1]) {
+                        tempcounter++;
+                        if (tempcounter > counter) {
+                            counter = tempcounter;
+                            indexOfSequence = index;
+                        }
+                    }
+                    else {
+                        tempcounter = 1;
+                    }
+                }
+                for (var times = 0; times < counter; times++) {
+                    jsConsole.write(numbers[indexOfSequence] + " ");
+                    
+                }
+                jsConsole.writeLine();
+            }
+        </script>
+    </body>
+</html>

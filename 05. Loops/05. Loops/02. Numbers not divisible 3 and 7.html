@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>01. Numbers from 1 to N that are not divisable by 3 and 7.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-number">Input array: </label>
+        <input type="text" id="tb-number"/>
+        <br />
+        <a href="#" onclick="writeNumbers()">Write numbers from 1 to N</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js">	  
+        </script>
+        <script>
+            function writeNumbers() {
+                var number = jsConsole.readInteger("#tb-number");
+                for (var counter = 1; counter <= number; counter++) {
+                    if (counter % 21 != 0) {
+                        jsConsole.writeLine(counter);
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

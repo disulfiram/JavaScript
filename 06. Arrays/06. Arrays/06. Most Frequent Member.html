@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>06. Sort array.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-numbers">Input array separated by ', ': </label>
+        <input id="tb-numbers" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readArray()">Find most repeated element!</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readArray() {
+                var numbers = jsConsole.readNumbersArray("#tb-numbers", ", ");
+                var counter = 0;
+                var countOfSameElements = 0;
+                var element = 0;
+                for (var index = 0; index < numbers.length; index++) {
+                    for (var secondIndex = 0; secondIndex < numbers.length; secondIndex++) {
+                        if (numbers[secondIndex] == numbers[index]) {
+                            counter++;
+                        }
+                    }
+                    if (countOfSameElements < counter) {
+                        countOfSameElements = counter;
+                        element = numbers[index];
+                    }
+                    counter = 0;
+                }
+                jsConsole.writeLine("The element " + element + " is repeated " + countOfSameElements + " times!");
+            }
+        </script>
+    </body>
+</html>
