@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>02. Reverse a number.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-number">Input number: </label>
+        <input id="tb-number" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readNumber()">Last digit</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readNumber() {
+                var number = jsConsole.readInteger("#tb-number");
+                splitNumberInArray(number);
+                printReversed(number);
+            }
+            function splitNumberInArray(number) {
+                var numberArray;
+                while (number != 0) {
+
+                }
+            }
+            function printReversed(number) {
+            }
+        </script>
+    </body>
+</html>
