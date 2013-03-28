@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>05. Number counter.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-numbers">Input array separated by ', ': </label>
+        <input id="tb-numbers" type="text" class="js-console-input"/>
+        <br/>
+        <label for="tb-theNumber">Input a number to look for: </label>
+        <input id="tb-theNumber" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readInput()">How many times?</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readInput() {
+                var numbers = jsConsole.readNumbersArray("#tb-numbers", ", ");
+                var number = jsConsole.readInteger("#tb-theNumber");
+                //var numbers = [1, 2, 3, 4, 1, 1]
+                //var number = 1;
+                var accurances = countAccurances(numbers, number);
+                printOnConsole(accurances);
+            }
+
+            function countAccurances(numbers, number) {
+                var counter = 0;
+                for (var index = 0; index < numbers.length; index++) {
+                    if (numbers[index] == number) {
+                        counter++;
+                    }
+                }
+                return counter;
+            }
+
+            function printOnConsole(accurances) {
+                jsConsole.writeLine(accurances + " times")
+            }
+        </script>
+    </body>
+</html>

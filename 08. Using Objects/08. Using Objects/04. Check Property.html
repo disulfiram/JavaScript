@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>04. Check property.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function hasProperty(object, property) {
+                var hasProp = false;
+                for (var prop in object) {
+                    if (property == prop) {
+                        jsConsole.writeLine("The object contain " + property + " property.");
+                        hasProp = true;
+                        break;
+                    }
+                }
+                if (hasProp == false) {
+                    jsConsole.writeLine("The object does not contain " + property + " property.");
+                }
+            }
+
+            //Copied object from the lecture demo:
+            function printStudent(student) {
+                jsConsole.writeLine("<strong>" + student.name + "</strong>");
+                jsConsole.writeLine("<strong>" + student.age + "</strong>");
+                jsConsole.writeLine("--------------------------");
+            }
+
+            var student = { name: "Doncho Minkov", age: 17 };
+            printStudent(student);
+            jsConsole.writeLine("Property 'subject':");
+            hasProperty(student, "subject");
+            jsConsole.writeLine("Property 'age':");
+            hasProperty(student, "age");
+        </script>
+    </body>
+</html>

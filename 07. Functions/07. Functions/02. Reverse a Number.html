@@ -15,16 +15,25 @@
         <script>
             function readNumber() {
                 var number = jsConsole.readInteger("#tb-number");
-                splitNumberInArray(number);
-                printReversed(number);
+                var numberArray = splitNumberInArray(number);
+                printReversed(numberArray);
             }
             function splitNumberInArray(number) {
-                var numberArray;
+                var numberArray = new Array();
+                var counter = 0;
                 while (number != 0) {
-
+                    numberArray[counter] = number % 10;
+                    var newNumber = number / 10;
+                    number = Math.round(newNumber)
+                    counter++
                 }
+                return numberArray
             }
-            function printReversed(number) {
+            function printReversed(numberArray) {
+                for (var index = 0; index < numberArray.length; index++) {
+                    jsConsole.write(numberArray[index]);
+                }
+                jsConsole.writeLine();
             }
         </script>
     </body>

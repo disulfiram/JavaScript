@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>03. Deep copy.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function deepCopy(object) {
+                if (typeof(object) != "object") {
+                    return object;
+                }
+                else {
+                    var objectCopy = {};
+                    for (var prop in object) {
+                        objectCopy[prop] = deepCopy(object[prop]);
+                    }
+                    return objectCopy;
+                }
+            }
+            
+            var intArray = [1, 2, 3];
+            jsConsole.writeLine(intArray);
+            var deepCopy = deepCopy(intArray);
+            intArray[0] += 5;
+            jsConsole.writeLine(intArray);
+            for (var prop in deepCopy) {
+                jsConsole.write(deepCopy[prop] + ",");
+            }
+        </script>
+    </body>
+</html>

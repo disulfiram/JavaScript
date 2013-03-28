@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5830D533-A30C-4929-B17C-1625177DDB4A}</ProjectGuid>
+    <ProjectGuid>{DBA52117-8053-48E1-B678-50BBCFBC835C}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_07.Functions</RootNamespace>
-    <AssemblyName>_07.Functions</AssemblyName>
+    <RootNamespace>_08.Using_Objects</RootNamespace>
+    <AssemblyName>_08.Using_Objects</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -57,13 +57,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="01. Last Digit.html" />
-    <Content Include="02. Reverse a Number.html" />
-    <Content Include="03. Count Word in Text.html" />
-    <Content Include="04. Number of Divs in Document.html" />
-    <Content Include="05. Number counter.html" />
-    <Content Include="06.  Bigger than Neighbors.html" />
-    <Content Include="07. First Number in Array Bigger than Neighbours.html" />
+    <Content Include="01. Geometry.html" />
+    <Content Include="01. Geometry.js" />
+    <Content Include="02. Remove Elements.html" />
+    <Content Include="03. Deep Copy.html" />
+    <Content Include="04. Check Property.html" />
+    <Content Include="05. Youngest.html" />
     <Content Include="scripts\js-console.js" />
     <Content Include="styles\js-console.css" />
     <Content Include="Web.config" />
@@ -95,7 +94,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:55923/</IISUrl>
+          <IISUrl>http://localhost:51734/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

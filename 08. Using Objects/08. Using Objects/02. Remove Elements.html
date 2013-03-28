@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>02. Remove elements.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-numbers">Input array separated by ', ': </label>
+        <input id="tb-numbers" type="text" class="js-console-input"/>
+        <br/>
+        <label for="tb-theNumber">Input a number to remove : </label>
+        <input id="tb-theNumber" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readInput()">Remove!</a>
+
+        <div id="js-console"></div>
+        <script src="02. Remove Elements.js"></script>
+        <script src="scripts/js-console.js"></script>
+
+        <script>
+            Array.prototype.remove = function (number) {
+                var newArr = [];
+                var newCounter = 0;
+                for (var index = 0; index < this.length; index++) {
+                    if (this[index] != number) {
+                        newArr[newCounter] = this[index];
+                        newCounter++;
+                    }
+                }
+                return newArr;
+            }
+
+            function readInput() {
+                var numbers = jsConsole.readNumbersArray("#tb-numbers", ", ");
+                var number = jsConsole.readInteger("#tb-theNumber");
+                jsConsole.writeLine(numbers);
+                jsConsole.writeLine(numbers.remove(number));
+            }            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>06. Bigger than neighbors.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-numbers">Input array separated by ', ': </label>
+        <input id="tb-numbers" type="text" class="js-console-input"/>
+        <br/>
+        <label for="tb-index">Input index: </label>
+        <input id="tb-index" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readArray()">Is the number at specified index bigger than neighbors?</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readArray() {
+                var numbers = jsConsole.readNumbersArray("#tb-numbers", ", ");
+                var index = jsConsole.readInteger("#tb-index");
+                var isBigger = new Boolean;
+                isBigger = checkIfBigger(index, numbers);
+                printResult(isBigger);
+            }
+            function checkIfBigger(index, numbers) {
+                var isBigger = false;
+                if (index != 0 && index != numbers.length - 1) {
+                    if (numebers[index] > numbers[index - 1] && numbers[index] > numbers[index + 1]) {
+                        isBigger = true;
+                    }
+                }
+                else if (index == 0) {
+                    if (numbers[index] > numbers[index + 1]) {
+                        isBigger = true;
+                    }
+                }
+                else if (index == numbers.length - 1) {
+                    if (numbers[index] > numbers[index - 1]) {
+                        isBigger = true;
+                    }
+                }
+                return isBigger;
+            }
+            function printResult(isBigger) {
+                jsConsole.writeLine("The number at the specified index is bigger? " + isBigger)
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>04. Count words number of divs.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        
+        <a href="#" class="js-console-btn" onclick="countDivs()">Count the divs.</a>
+        <a href="#" class="js-console-btn" onclick="addDiv()">Make a new div</a>
+        <div id="js-console"></div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function countDivs(isCaseSensitive) {
+                var divNumber = document.getElementsByTagName("div").length;
+                jsConsole.writeLine(divNumber);
+            }
+
+            function addDiv()
+            {
+                var newDiv = document.createElement("div");
+                document.body.appendChild(newDiv);
+            }
+        </script>
+    </body>
+</html>

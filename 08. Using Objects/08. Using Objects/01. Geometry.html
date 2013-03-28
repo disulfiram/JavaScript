@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>01. Geometry.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="js-console"></div>
+        <script src="01.%20Geometry.js"></script>
+        <script src="scripts/js-console.js"></script>
+        
+        <script>
+            var firstPoint = newPoint(0, 0);
+            var secondPoint = newPoint(5, 5);
+            var firstLine = newLine(firstPoint, secondPoint);
+            jsConsole.writeLine(firstPoint.toString());
+            jsConsole.writeLine(secondPoint.toString());
+            jsConsole.writeLine(firstLine.toString());
+            jsConsole.writeLine(firstLine.Tangent);
+        </script>
+    </body>
+</html>
