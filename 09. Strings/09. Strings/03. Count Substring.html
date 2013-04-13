@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>03. Count substring.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-text">Input string to search in: </label>
+        <input id="tb-text" type="text" class="js-console-input"/>
+        <br/>
+        <label for="tb-word">Input a number to look for: </label>
+        <input id="tb-word" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readInput()">Search!</a>
+        <div id="js-console">
+            <p>Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search). </p>
+        </div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readInput() {
+                var text = jsConsole.read("#tb-text");
+                var word = jsConsole.read("#tb-word");
+                var numberOfTimes = countSubstring(word.toLowerCase(), text.toLowerCase());
+                jsConsole.writeLine(numberOfTimes);
+                //var splitText = [];
+                //if (isCaseSensitive == false) {
+                //    splitText = text.toLowerCase().split(word.toLowerCase());
+                //}
+                //if (isCaseSensitive == true) {
+                //    splitText = text.split(word);
+                //}
+                //jsConsole.writeLine(splitText.length - 1 + " times.")
+                //simplier easier solution
+            }
+            
+            function countSubstring(word, string) {
+                var counter = 0;
+                var index = 0;
+                while (string.indexOf(word, index) >= 0) {
+                    counter++
+                    index = string.indexOf(word, index) + word.length;
+                }
+                return counter;
+            }
+        </script>
+    </body>
+</html>

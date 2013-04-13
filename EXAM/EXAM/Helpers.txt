@@ -1,0 +1,36 @@
+﻿Fulltrim
+
+String.prototype.fulltrim = function () { return this.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g, '').replace(/\s+/g, ' '); };
+
+***
+
+Template
+
+function Solve(args) {
+}
+
+Solve([""]);
+
+***
+
+Return Result
+
+var resultString = "";
+for (var i = 0; i < *array*.length; i++){
+	resultString += *string* + "\r\n";
+}
+return resultString;
+
+***
+
+Input parse
+
+function Solve(args) {
+	var intArr = args[0].split(", ")
+
+	for (var i = 0; i < intArr.length; i++){
+		intArr[i] = parseInt(positions[i]);
+	}
+}
+
+Solve([""]);

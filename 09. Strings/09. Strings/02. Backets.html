@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>02. Brackets.io</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-string">Input string: </label>
+        <input id="tb-string" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readInput()">Reverse the string</a>
+        <div id="js-console">
+            <p>Write a JavaScript function to check if in a given expression the brackets are put correctly.</p>
+        </div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readInput() {
+                var string = jsConsole.read("#tb-string");
+                var isCorect = checkIfCorrect(string);
+                jsConsole.writeLine(string + " is correct? " + isCorect);
+            }
+            function checkIfCorrect(string) {
+                var counter = 0
+                for (var letter = 0; letter < string.length; letter++) {
+                    if (string[letter] == "(") {
+                        counter++;
+                    }
+                    if (string[letter] == ")") {
+                        counter--;
+                    }
+                    if (counter < 0) {
+                        return false;
+                    }
+                }
+                if (counter == 0) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+                return result;
+            }
+        </script>
+    </body>
+</html>

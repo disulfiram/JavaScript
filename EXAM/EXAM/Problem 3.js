@@ -1,0 +1,4 @@
+﻿function Solve(args) {
+}
+
+Solve([""]);

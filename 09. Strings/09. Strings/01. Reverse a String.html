@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>01. Reverse a string.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-string">Input string: </label>
+        <input id="tb-string" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readInput()">Reverse the string</a>
+        <div id="js-console">
+            <p>Write a JavaScript function reverses string and returns it.</p>
+        </div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readInput() {
+                var string = jsConsole.read("#tb-string");
+                var reversedString = stringReverse(string);
+                jsConsole.writeLine(reversedString);
+            }
+            function stringReverse(string) {
+                var result = "";
+                for (var letter = 0; letter < string.length; letter++) {
+                    result+= string[string.length - 1 - letter];
+                }
+                return result;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>07. URL parser.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-text">Input url: </label>
+        <input id="tb-text" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readInput()">Parse!</a>
+        <div id="js-console">
+            <p>Write a script that parses an URL address given in the format: [protocol]://[server]/[resource] and extracts from it the [protocol], [server] and [resource] elements. Return the elements in a JSON object. </p>
+        </div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readInput() {
+                var text = jsConsole.read("#tb-text");
+
+                var url = urlParse(text);
+
+                jsConsole.writeLine(url.toString());
+            }
+
+            function urlParse(text) {
+                var textArr = text.split("://");
+
+                var protocol = textArr[0]
+
+                var endOfServer = textArr[1].indexOf("/")
+
+                var server = textArr[1].substring(0, endOfServer);
+                
+                var resource = textArr[1].substring(endOfServer+1, textArr[1].length-1);
+
+                return URL = {
+                    protocol: protocol,
+                    server: server,
+                    resource: resource,
+                    toString: function ToString() {
+                        return "[protocol] : " + this.protocol + "<br/>" + "[server] : " + this.server
+                        +"</br>" + "[resource] : " + this.resource + "</br>";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

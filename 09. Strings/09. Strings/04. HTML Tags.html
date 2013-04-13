@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>04. Count substring.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-text">Input text to edit: </label>
+        <input id="tb-text" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readInput()">Reformat!</a>
+        <div id="js-console">
+            <p>You are given a text. Write a function that changes the text in all regions: </p>
+        </div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readInput() {
+                var text = jsConsole.read("#tb-text");
+                
+                var textArr = text.split("<");
+                
+                findTags(textArr);
+            }
+
+            function findTags(textArr) {
+                for (var partOfText = 0; partOfText < textArr.length; partOfText++) {
+                    switch (textArr[partOfText].substr(0, 7)) {
+                        case "upcase>":
+                            printOnConsole(textArr[partOfText].substring(7, textArr[partOfText].length).toUpperCase());
+                            break;
+                        case "lowcase":
+                            printOnConsole(textArr[partOfText].substring(8, textArr[partOfText].length).toLowerCase());
+                            break;
+                        case "mixcase":
+                            //temp
+                            printOnConsole(textArr[partOfText].substring(8, textArr[partOfText].length))
+                            break;
+                        case "/mixcas":
+                        case "/lowcas":
+                        case "/upcase":
+                            printOnConsole(textArr[partOfText].substring(9, textArr[partOfText].length))
+                            break;
+                        default:
+                            printOnConsole(textArr[partOfText])
+                            break;
+                    }
+                }
+            }
+            
+            function printOnConsole(string) {
+                jsConsole.write(string);
+            }
+        </script>
+    </body>
+</html>

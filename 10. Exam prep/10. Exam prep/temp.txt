@@ -1,0 +1,19 @@
+function del(lineToBeProcessed, start) {
+        var hasTag = true;
+        var start = 0;
+        var end = 0;
+
+        for (var i = 0; i < lineToBeProcessed.length - 6; i++) {
+            if (lineToBeProcessed.substr(i, 5) === "<del>") {
+                start = i + 5;
+                i = start;
+                text = Del(lineToBeProcessed, start);
+            }
+            if (lineToBeProcessed.substr(i, 6) === "</del>") {
+                end = i;
+                var length = end - start;
+                var innerText = lineToBeProcessed.substr(start, length);
+                text = lineToBeProcessed.replace(innerText, "");
+            }
+        }
+    }

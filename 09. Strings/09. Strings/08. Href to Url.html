@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>08. Replace html tags.</title>
+        <link href="styles/js-console.css" rel="stylesheet" />
+    </head>
+    <body>
+        <label for="tb-text">Input url: </label>
+        <input id="tb-text" type="text" class="js-console-input"/>
+        <a href="#" class="js-console-btn" onclick="readInput()">Parse!</a>
+        <div id="js-console">
+            <p>Write a JavaScript function that replaces in a HTML document given as string all the tags <a href="…">…</a> with corresponding tags [URL=…]…/URL].</p>
+        </div>
+        <script src="scripts/js-console.js"></script>
+        <script>
+            function readInput() {
+                var text = jsConsole.read("#tb-text");
+
+                var newText = switchWithURL(text);
+
+                jsConsole.writeLine(newText);
+            }
+
+            function switchWithURL(text) {
+                var temp = text.split("<a href=\"");
+                text = temp.join("[URL=");
+                temp = text.split("</a>");
+                text = temp.join("[/URL]");
+                temp = text.split("\">");
+                text = temp.join("]");
+                return text;
+            }
+        </script>
+    </body>
+</html>
